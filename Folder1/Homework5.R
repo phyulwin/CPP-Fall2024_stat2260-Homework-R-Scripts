@@ -96,3 +96,49 @@ cat("Mean:", mean_X_rounded, "\n")
 cat("Standard Deviation:", std_dev_X_rounded, "\n")
 #-------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------
+# Define parameters
+n <- 15
+p_no_citations <- 0.60
+p_at_least_one_citation <- 0.40
+
+# (a) Probability that at least 10 have no citations
+prob_at_least_10_no_citations <- sum(dbinom(10:n, size = n, prob = p_no_citations))
+
+# (b) Probability that fewer than half have at least one citation
+prob_fewer_than_half_at_least_one <- sum(dbinom(0:7, size = n, prob = p_at_least_one_citation))
+
+# (c) Probability that the number with at least one citation is between 5 and 10, inclusive
+prob_between_5_and_10_at_least_one <- sum(dbinom(5:10, size = n, prob = p_at_least_one_citation))
+
+# Round results to three decimal places
+prob_at_least_10_no_citations <- round(prob_at_least_10_no_citations, 3)
+prob_fewer_than_half_at_least_one <- round(prob_fewer_than_half_at_least_one, 3)
+prob_between_5_and_10_at_least_one <- round(prob_between_5_and_10_at_least_one, 3)
+
+# Print results
+cat("Probability that at least 10 have no citations:", prob_at_least_10_no_citations, "\n")
+cat("Probability that fewer than half have at least one citation:", prob_fewer_than_half_at_least_one, "\n")
+cat("Probability that number with at least one citation is between 5 and 10:", prob_between_5_and_10_at_least_one, "\n")
+#-------------------------------------------------------------------------------
+# Homework 5 Q7
+#-------------------------------------------------------------------------------
+# Parameters
+n <- 100          # Number of customers
+
+# (a) Debit card
+p_debit <- 0.3   # Probability of using a debit card
+mean_debit <- n * p_debit
+variance_debit <- n * p_debit * (1 - p_debit)
+
+cat("Mean number of customers using a debit card:", mean_debit, "\n")
+cat("Variance of the number of customers using a debit card:", variance_debit, "\n")
+
+# (b) Not using cash
+p_not_cash <- 0.8  # Probability of not using cash
+mean_not_cash <- n * p_not_cash
+variance_not_cash <- n * p_not_cash * (1 - p_not_cash)
+
+cat("Mean number of customers not using cash:", mean_not_cash, "\n")
+cat("Variance of the number of customers not using cash:", variance_not_cash, "\n")
+#-------------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
