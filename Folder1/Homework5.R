@@ -3,6 +3,12 @@ binomial_probability <- function(n, x, p) {
   return(choose(n, x) * (p^x) * ((1 - p)^(n - x)))
 }
 
+# (a) b(5; 8, 0.25)
+binomial_probability(8, 5, 0.25)
+
+# (b) b(6; 8, 0.65)
+binomial_probability(8, 6, 0.65)
+
 # (c) P(3 ≤ X ≤ 5) when n = 7 and p = 0.65
 n_c <- 7
 p_c <- 0.65
